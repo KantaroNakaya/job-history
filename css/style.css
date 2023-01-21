@@ -1,0 +1,812 @@
+/* ここからフォントの設定　 */
+body{
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+    
+}
+.header-box a{
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+h2,h3{
+    font-family: 'Zen Maru Gothic', sans-serif;
+    line-height: 1.5em;
+}
+
+.start,.end{
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+
+/* ここまでフォントの設定　 */
+
+body{
+    width: 100%;   
+    color: black;
+    background-color: rgba(255,255,153,0.1);
+}
+
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+/*========= ローディング画面のためのCSS ===============*/
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: whitesmoke;
+	z-index: 9999999;
+	text-align:center;
+	color: gray;
+}
+
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+    display: block;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: scaleX(0);
+    background-color: rgba(255,255,153,0.5);
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+/*画面遷移時のjsに合わせるために、html上ではヘッダー部分部分もフッター部分も全てmain内に入れています。*/
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+/* ここから画面遷移後のページのcss  */
+
+h2{
+    font-size: 48px;
+    font-weight:bold;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(255,204,102,1.0);
+}
+h3{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin: 16px;
+    text-shadow: 1px 1px 3px rgba(255,204,102,0.1);
+}
+
+/* ここからPCヘッダー部分 */
+.header-box{
+    display: block;
+    position: fixed;
+    width: 24vw;
+    height: 100vh;
+    padding: 3vh 0;
+    z-index: 5;
+    box-shadow : 0px 0px 7.5px rgba(0, 0, 0, .5) ;
+}
+/* ヘッダー部分のサイトタイトルと自分の名前の箱*/
+.name-box{
+    width: 80%;
+    text-align: center;
+    margin: 5vh auto;
+    padding: 0;
+}
+.name-box a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 2vh 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .5);
+}
+.name-box a:hover{
+    background-color: rgba(255,204,102,0.5);
+    border-radius: 3px;
+    transition: 0.5s ease-in-out;
+}
+/*　ヘッダー部分のサイトタイトル　*/
+.name{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+.name img{
+    width: 100%;
+}
+/*　過去・現在・未来の箱3つ*/
+.list-box{
+    width: 60%;
+    margin: 8vh auto;
+    
+}
+.list-box a{
+    display: block;
+    text-align: center;
+    padding: 1vw 0;
+    font-size: 3vh;
+    font-weight: bold;
+    border-radius: 3px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .5);
+}
+.list-box a:hover{
+    background-color: rgba(255,204,102,0.5);
+    border-radius: 3px;
+    transition: 0.5s ease-in-out;
+}
+/*　ここまでPCヘッダー部分*/
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+/* ここからPCメイン部分 */
+
+
+
+/*　メイン部分全体の設定　*/
+.main-box{
+    width: 100vw;
+    padding: 32px 0vw 32px 24vw;
+}
+
+/*　始めのあいさつ　*/
+.start{
+    font-size: 24px;
+    padding-top: 6vh;
+    width: 80%;
+    max-width: 840px;
+    margin: 0 auto;
+}
+.start p{
+    text-decoration: underline solid rgba(255,204,102,0.8); 
+}
+
+/*　過去・現在・未来の箱それぞれの設定　*/
+.time-box{
+    width: 90%;
+    margin: 32px auto;
+    padding: 32px 0;
+}
+/*　「過去」「現在」「未来」より下のコンテンツの設定　*/
+.content{
+    width: 80%;
+    margin: 8px auto;
+}
+
+/*　点線の箱それぞれの設定　*/
+.dot-box{
+    margin: 16px 0;
+    border: 1px dotted black;
+    padding: 16px;
+    font-size: 18px;
+    line-height: 28px;
+    transition: 0.5s ease-in-out;
+}
+
+.dot-box span{
+    text-shadow: 1px 1px 3px red;
+    color: black;
+}
+.dot-box p{
+    width: 80%;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* フリー画像のサイズ等の設定　 */
+.job-image{
+    width: 50%;
+    margin: 16px auto;
+}
+.job-image img{
+    width: 100%;
+}
+.job-image-small{
+    width: 25%;
+    margin: 16px auto;
+}
+.job-image-small img{
+    width: 100%;
+}
+
+.underBar{
+    text-decoration-line: underline;
+}
+
+/*　「現在」の中の、スキルに関する箱　*/
+
+/*  「学校で身に付けたスキル」*/
+/*  「趣味や仕事等で身に付けたスキル」*/
+/*  「Webポートフォリオ」*/
+/*  「動画編集 制作物」*/
+
+.skill{
+    width: 100%;
+    border: 1px dotted black;
+    padding: 8px;
+    margin: 16px 0;
+    transition: 0.5s ease-in-out;
+}
+
+/*  「学校で身に付けたスキル」*/
+/*  「趣味や仕事等で身に付けたスキル」*/
+.skill-list p, .skill-list a{
+    display: block;
+    border: none;
+    text-align: center;
+    margin: 3vw 0;
+    font-size: 24px;
+    text-decoration-line:   underline;
+    text-decoration-style: dashed;
+    text-decoration-color: rgba(255,0,0,0.5);
+}
+/*  「趣味や仕事等で身に付けたスキル」*/
+/*  「Webポートフォリオ」*/
+/*  「動画編集 制作物」*/
+.portfolio{
+    width: 100%;
+    display: block;
+}
+/*各作品*/
+.work{
+    width: 100%;
+    padding: 8px;
+}
+/*作品名*/
+.work-title{
+    width: 100%;
+    margin: 8px auto;
+    text-align: center;
+}
+/* 作品画像の下のボタン */
+.work-title a {
+/*    display: flex;*/
+    display: block;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px auto;
+    padding: 1em 2em;
+    width: 50%;
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(255,204,102,1.0);
+    font-size: 18px;
+    font-weight: 700;
+    border: 3px solid #333;
+    box-shadow: 3px 3px 3px #333; 
+    border-radius: 10px;
+}
+
+
+.work-title a:hover {
+color: #333333;
+text-decoration: none;
+background-color: rgba(255,204,102,1.0);
+box-shadow: 8px 8px 3px #333;
+}
+
+/*作品のスクショ*/
+.work-photo{
+    width: 60%;
+    display: flex;
+    margin: 32px auto;
+}
+/*  「Webポートフォリオ」*/
+.mobile-photo{
+    width: 20%;
+    margin: auto;
+}
+.pc-photo{
+    width: 80%;
+}
+.work-photo img{
+    width: 100%;
+}
+
+
+/* 動画編集　成果物 */
+.mv-image{
+    width: 50%;
+    margin: 0 auto;
+}
+.mv-image img{
+    width: 100%;
+}
+.mv-1{
+    width: 44%;
+}
+.mv-2{
+    width: 56%;
+}
+/*　連絡先　*/
+.contact{
+    text-align: center;
+    width: 80%;
+    margin: 32px auto;
+    padding: 32px 0;
+    border: 1px solid black;
+    border-radius: 8px;   
+    background:repeating-linear-gradient(
+    -45deg,
+    #ccc,
+    #ccc 1px,
+    rgba(255,204,102,0.1) 0,
+    rgba(255,204,102,0.1) 29px
+    );
+}
+.contact p:nth-child(1){
+    padding: 2vw 0;
+    font-size: 18px;
+}
+.contact p:not(:nth-child(1)){
+    padding: 0.5vw 0;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+/* 最後の挨拶　*/
+.end{
+    text-align: center;
+    font-size: 24px;
+    text-decoration: underline solid rgba(255,204,102,0.8); 
+}
+.end p{
+    margin: 64px 0;
+}
+
+/*　ここから「後ろの背景を左から右へ伸ばしてから文字を表示」　*/
+.bgextend{
+	animation-name:bgextendAnimeBase;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+	position: relative;
+	overflow: hidden;/*　はみ出た色要素を隠す　*/
+	opacity:0;
+}
+
+@keyframes bgextendAnimeBase{
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;  
+}
+}
+
+/*中の要素*/
+.bgappear{
+	animation-name:bgextendAnimeSecond;
+	animation-duration:1s;
+	animation-delay: 0.6s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes bgextendAnimeSecond{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+/*左から右*/
+.bgLRextend::before{
+	animation-name:bgLRextendAnime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,204,102,0.8);/*伸びる背景色の設定*/
+}
+@keyframes bgLRextendAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.bgappearTrigger,
+.bgLRextendTrigger{
+    opacity: 0;
+}
+/*　ここまで「後ろの背景を左から右へ伸ばしてから文字を表示」　*/
+
+/* brのレスポンシブ対応 */
+.pcVer{
+    display: flex;
+}
+.spVer{
+    display: none;
+}
+
+/*　ここまでPCメイン部分*/
+
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+/* タブレット画面時 */
+@media screen and (max-width: 1080px) {
+
+.name{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+/*作品のスクショ*/
+.work-photo{
+    width: 80%;
+    display: flex;
+    margin: 32px auto;
+}
+/* 作品画像の下のボタン */
+.work-title a {
+    width: 70%;
+    padding: 1em 2em;
+}
+/* ボタンの矢印のサイズ調整　*/
+.work-title a::after {
+    width: 7.5px;
+    height: 7.5px;
+}
+
+}
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+/* スマホ画面時 */
+@media screen and (max-width: 768px) {
+
+/*　ここから「上から下へ背景色が伸びる」の実装  */
+
+/*========= ローディング画面のためのCSS ===============*/
+/* スマホ画面時もパソコン画面時と同様 */
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+    display: block;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: scaleY(0);
+    background-color: rgba(255,255,153,0.5);/*伸びる背景色の設定*/
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:top;
+		transform:scaleY(0);
+	}
+	50% {
+		transform-origin:top;
+		transform:scaleY(1);
+	}
+	50.001% {
+		transform-origin:bottom;
+	}
+	100% {
+		transform-origin:bottom;
+		transform:scaleY(0);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+/*　ここまで「上から下へ背景色が伸びる」の実装  */
+
+/* ここからmobileヘッダー部分 */
+.header-box{
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 10vw;
+    background-color: rgba(255,255,255,0.8);
+    padding: 0;
+    box-shadow : 0px 1px 3px rgba(0, 0, 0,1.0) ;
+    
+}
+/* ヘッダー部分のサイトタイトルと自分の名前の箱*/
+.name-box{
+    width: 40%;
+    margin: 0vh 0;
+}
+
+.name-box a{
+    display: block;
+    width: 100%;
+    padding: 1.8vw;
+    border-radius: 0px;
+}
+.name-box a img{
+    width: 100%;
+}
+.name-box a:hover{
+    background-color: rgba(255,204,102,0.5);
+    border-radius: 0px;
+}
+/*　ヘッダー部分のサイトタイトル　*/
+.name{
+    font-size: 2.8vw;
+    text-align: center;
+}
+
+/*　過去・現在・未来の箱3つ*/
+.list-box{
+    width: 20%;
+    margin: 0vh 0;
+}
+.list-box a{
+    display: block;
+    text-align: center;
+    padding: 3.3vw 0;
+    font-size: 3vw;
+    border-radius: 0px;
+}
+.list-box a:hover{
+    background-color: rgba(255,204,102,0.5);
+    border-radius: 0px;
+}
+/*　ここまでmobileヘッダー部分*/
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+/* ここからmobileメイン部分 */
+/*　「プロフィール」「過去」「現在」「未来」といった文字の設定　*/
+h2{
+    font-size: 36px;
+    font-weight:bold;
+    text-align: center;
+}
+/*　点線の箱の中のタイトル設定　*/
+h3{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 16px;
+}
+
+.start{
+    font-size: 24px;
+    padding-left:0vw;
+    padding-top: 18vw;
+    width: 80%;
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+/*　メイン部分全体の設定　*/
+.main-box{
+    width: 100vw;
+    padding-left: 0;
+}
+
+/*　過去・現在・未来の箱それぞれの設定　*/
+.time-box{
+    width: 95%;
+    margin: 32px auto;
+    padding: 32px 0; 
+}
+
+/*　「過去」「現在」「未来」より下のコンテンツの設定　*/
+.content{
+    width: 95%;
+    margin: 8px auto;
+}
+
+/*　点線の箱それぞれの設定　*/
+.dot-box{
+    margin: 16px 0;
+    border: 1px dotted black;
+    font-size: 18px;
+    line-height: 28px;
+    transition: 0.5s ease-in-out;
+}
+.dot-box p{
+    width: 90%;
+    margin: 16px auto;
+}
+
+/*  「学校で身に付けたスキル」*/
+/*  「趣味や仕事等で身に付けたスキル」*/
+.skill-list p, .skill-list a{
+    display: block;
+    border: none;
+    text-align: center;
+    margin: 3vw 0;
+    font-size: 18px;
+    text-decoration-line:   underline;
+    text-decoration-style: dashed;
+    text-decoration-color: rgba(255,0,0,0.5);
+}
+
+/*作品のスクショ*/
+.work-photo{
+    width: 80%;
+    display: flex;
+    margin: 32px auto;
+}
+/* 作品画像の下のボタン */
+.work-title a {
+    width: 90%;
+    padding: 1em 1em;
+}
+
+/* ボタンの矢印のサイズ調整　*/
+.work-title a::after {
+    width: 5px;
+    height: 5px;
+}
+
+/* 最後の挨拶　*/
+.end{
+    text-align: center;
+    font-size: 18px;
+    text-decoration: underline solid rgba(255,204,102,0.8); 
+}
+.end p{
+    margin: 64px 0;
+}
+
+/* brのレスポンシブ対応 */
+.pcVer{
+    display: none;
+}
+.spVer{
+    display: flex;
+}
+}
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+/* 小さいスマホの画面時 */
+@media screen and (max-width: 375px) {
+
+
+/* 作品画像の下のボタン */
+.work-title a {
+    width: 90%;
+    padding: 1em 0.5em;
+    font-size: 14px;
+}
+
+
+}
+
+
